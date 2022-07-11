@@ -1,0 +1,7 @@
+ENV RUNC_VERSION=v1.0.0-rc8
+ENV CONTAINERD_VERSION v1.0
+
+RUN set -x && \
+    curl -sSL https://github.com/containerd/containerd/releases/download/v$CONTAINERD_VERSION/containerd-$CONTAINERD_VERSION.linux-amd64.tar.gz  \
+    | tar -zvxf - -C /usr/local/concourse/bin --strip-components=1
+
